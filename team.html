@@ -102,10 +102,10 @@
                         <div class="main_mix_menu">
                             <ul>
                                 <li class="btn btn-primary filter" data-filter="all">All</li>
-                                <li class="btn btn-primary filter" data-filter=".cat1">Web</li>
-                                <li class="btn btn-primary filter" data-filter=".cat2">UI/UX</li>
-                                <li class="btn btn-primary filter" data-filter=".cat3">Photography</li>
-                                <li class="btn btn-primary filter" data-filter=".cat4">Branding</li>
+                                <li class="btn btn-primary filter" data-filter=".cat1">Steering Commitee</li>
+                                <li class="btn btn-primary filter" data-filter=".cat2">Investors</li>
+                                <li class="btn btn-primary filter" data-filter=".cat3">Mentors</li>
+                                <li class="btn btn-primary filter" data-filter=".cat4">Partners</li>
                             </ul>
                         </div>
 
@@ -115,7 +115,7 @@
                                     <img src="assets/images/pf1.jpg" alt="" />
                                     <div class="mixi_portfolio_overlay">
                                         <div class="overflow_hover_text"> 
-                                            <p>Name</p>
+                                            <a href="javascript:void(0)" onclick="openDescription(1);"><p>Name</p></a>
                                         </div>
                                     </div>
                                 </div>
@@ -125,7 +125,7 @@
                                     <img src="assets/images/pf2.jpg" alt="" />
                                     <div class="mixi_portfolio_overlay">
                                         <div class="overflow_hover_text"> 
-                                            <p>Name</p>
+                                            <a href="javascript:void(0)" onclick="openDescription(1);"><p>Name</p></a>
                                         </div>
                                     </div>
                                 </div>
@@ -135,7 +135,7 @@
                                     <img src="assets/images/pf3.jpg" alt="" />
                                     <div class="mixi_portfolio_overlay">
                                         <div class="overflow_hover_text"> 
-                                            <p>Name</p>
+                                            <a href="javascript:void(0)" onclick="openDescription(1);"><p>Name</p></a>
                                         </div>
                                     </div>
                                 </div>
@@ -145,7 +145,7 @@
                                     <img src="assets/images/pf4.jpg" alt="" />
                                     <div class="mixi_portfolio_overlay">
                                         <div class="overflow_hover_text"> 
-                                            <p>Name</p>
+                                            <a href="javascript:void(0)" onclick="openDescription(1);"><p>Name</p></a>
                                         </div>
                                     </div>
                                 </div>
@@ -155,7 +155,7 @@
                                     <img src="assets/images/pf5.jpg" alt="" />
                                     <div class="mixi_portfolio_overlay">
                                         <div class="overflow_hover_text"> 
-                                            <p>Name</p>
+                                            <a href="javascript:void(0)" onclick="openDescription(1);"><p>Name</p></a>
                                         </div>
                                     </div>
                                 </div>
@@ -165,7 +165,7 @@
                                     <img src="assets/images/pf6.jpg" alt="" />
                                     <div class="mixi_portfolio_overlay">
                                         <div class="overflow_hover_text"> 
-                                            <p>Name</p>
+                                            <a href="javascript:void(0)" onclick="openDescription(1);"><p>Name</p></a>
                                         </div>
                                     </div>
                                 </div>
@@ -175,7 +175,7 @@
                                     <img src="assets/images/pf7.jpg" alt="" />
                                     <div class="mixi_portfolio_overlay">
                                         <div class="overflow_hover_text"> 
-                                            <p>Name</p>
+                                            <a href="javascript:void(0)" onclick="openDescription(1);"><p>Name</p></a>
                                         </div>
                                     </div>
                                 </div>
@@ -185,7 +185,7 @@
                                     <img src="assets/images/pf7.jpg" alt="" />
                                     <div class="mixi_portfolio_overlay">
                                         <div class="overflow_hover_text"> 
-                                            <p>Name</p>
+                                            <a href="javascript:void(0)" onclick="openDescription(1);"><p>Name</p></a>
                                         </div>
                                     </div>
                                 </div>
@@ -197,6 +197,23 @@
                 </div>
             </div>
         </section>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+    </div>
+  </div>
+</div>
 
         
          <!-- End of portfolio two Section -->        
@@ -247,13 +264,13 @@
         <script src="assets/js/main.js"></script>
 
         <style type="text/css">
-            .overview >p,h3 {
-                font-size: 1.125rem;
-            }
             .overlay {
                 height: 80px;
             }
         </style>
+        <script type="text/javascript">
+            $("#exampleModal").modal('show');
+        </script>
 
     </body>
 </html>
