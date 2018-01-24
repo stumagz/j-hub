@@ -106,8 +106,7 @@
                         <div class="main_mix_menu">
                             <ul>
                                 <li class="btn btn-primary filter" data-filter="all">All</li>
-                                <li class="btn btn-primary filter" data-filter=".cat1">Steering Commitee</li>
-                                <li class="btn btn-primary filter" data-filter=".cat2">Investors</li>
+                                <li class="btn btn-primary filter" data-filter=".cat1">Advisors</li>
                                 <li class="btn btn-primary filter" data-filter=".cat3">Mentors</li>
                                 <li class="btn btn-primary filter" data-filter=".cat4">Partners</li>
                             </ul>
@@ -120,6 +119,7 @@
                                     <div class="mixi_portfolio_overlay">
                                         <div class="overflow_hover_text"> 
                                             <!-- Button trigger modal -->
+                                            <div class="a-name">Hello This is Name</div>
                                             <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal1">
                                               Read More
                                             </button>
@@ -399,10 +399,22 @@
                     height: 70px;   
                 }
 
-                .main_menu_bg
-                {
-                    background-color: #333;
+                .overlay
+                 {
+                    background-color:rgba(247, 85, 31, 0.65);
                 }
+                .menu-scroll , .main_mix_menu ul li.active,.main_mix_menu ul li.active:hover,.main_mix_menu ul li.active:focus
+                {
+                    background-color:rgba(247, 85, 31, 0.85);
+                }
+
+                .a-name
+                {
+                    color: #fff;
+                }
+
+
+
         </style>
         <script type="text/javascript">
             function openDescription(id) {
