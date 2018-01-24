@@ -29,19 +29,19 @@
 
         <script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
         <!-- Core CSS file -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.css"> 
+        <link rel="stylesheet" href="assets/css/photoswipe.css"> 
 
         <!-- Skin CSS file (styling of UI - buttons, caption, etc.)
              In the folder of skin CSS file there are also:
              - .png and .svg icons sprite, 
              - preloader.gif (for browsers that do not support CSS animations) -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css"> 
+        <link rel="stylesheet" href="assets/css/default-skin.css"> 
 
         <!-- Core JS file -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js"></script> 
+        <script src="assets/js/photoswipe.min.js"></script> 
 
         <!-- UI JS file -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js"></script> 
+        <script src="assets/js/photoswipe-ui-default.min.js"></script> 
     </head>
     <body data-spy="scroll" data-target=".navbar-collapse">
         <!--[if lt IE 8]>
@@ -184,38 +184,7 @@
                     <br>
                     <!-- <h2 style="font-size: 25px">First gallery:</h2> -->
 
-                    <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-
-                        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                          <a href="https://farm3.staticflickr.com/2567/5697107145_a4c2eaa0cd_o.jpg" itemprop="contentUrl" data-size="1024x1024">
-                              <img src="https://farm3.staticflickr.com/2567/5697107145_3c27ff3cd1_m.jpg" itemprop="thumbnail" alt="Image description" />
-                          </a>
-                          <figcaption itemprop="caption description">Image caption  1</figcaption>
-
-                      </figure>
-
-                      <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                          <a href="https://farm2.staticflickr.com/1043/5186867718_06b2e9e551_b.jpg" itemprop="contentUrl" data-size="964x1024">
-                              <img src="https://farm2.staticflickr.com/1043/5186867718_06b2e9e551_m.jpg" itemprop="thumbnail" alt="Image description" />
-                          </a>
-                          <figcaption itemprop="caption description">Image caption 2</figcaption>
-                      </figure>
-
-                      <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                          <a href="https://farm7.staticflickr.com/6175/6176698785_7dee72237e_b.jpg" itemprop="contentUrl" data-size="1024x683">
-                              <img src="https://farm7.staticflickr.com/6175/6176698785_7dee72237e_m.jpg" itemprop="thumbnail" alt="Image description" />
-                          </a>
-                          <figcaption itemprop="caption description">Image caption 3</figcaption>
-                      </figure>
-
-                      <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                          <a href="https://farm6.staticflickr.com/5023/5578283926_822e5e5791_b.jpg" itemprop="contentUrl" data-size="1024x768">
-                              <img src="https://farm6.staticflickr.com/5023/5578283926_822e5e5791_m.jpg" itemprop="thumbnail" alt="Image description" />
-                          </a>
-                          <figcaption itemprop="caption description">Image caption 4</figcaption>
-                      </figure>
-
-                  </div>
+                    <div id="my-gallery" class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery"></div>
               </div>
 
               <div class="col-4"></div>
@@ -268,6 +237,25 @@
         <script src="assets/js/plugins.js"></script>
         <script src="assets/js/main.js"></script>
         <script type="text/javascript">
+            var url = 'https://graph.facebook.com/842369365837382/photos?fields=images,name,height,width&limit=1000&access_token=178459886243963|ce7d376b8e9ccc48b6c1a4f2bd679973&callback=?';
+            function appendImages(url) {
+                $.getJSON(url, function(json, status, xhr) {
+                    var imgs = json.data;
+                    var thumbs = $('#my-gallery');
+                    for (var i = 0, l = imgs.length; i < l; i++) {
+                    $(`<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                              <a href="` + imgs[i].images[imgs[i].images.length - 1].source + `" itemprop="contentUrl" data-size="`+imgs[i].width+`x`+imgs[i].height+`">
+                                  <img src="`+imgs[i].images[0].source+`" itemprop="thumbnail" alt="Image description" />
+                              </a>
+                              `+ (imgs[i].hasOwnProperty('name') ? `<figcaption itemprop="caption description">`+imgs[i].name+`</figcaption>` : ``) +`
+                          </figure>`).appendTo(thumbs);
+                    }
+                    if (json.paging.hasOwnProperty('next')) {
+                        appendImages(json.paging.next);
+                    }
+                });
+            }
+            appendImages(url);
             var initPhotoSwipeFromDOM = function(gallerySelector) {
 
             // parse slide data (url, title, size ...) from DOM elements 
@@ -517,12 +505,6 @@
             }
             .my-gallery figcaption {
               display: none;
-            }
-            #footer
-            {
-                position: absolute;
-                width: 100%;
-                bottom: 0px;
             }
 
         </style>
