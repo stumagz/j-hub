@@ -105,7 +105,7 @@ jQuery(document).ready(function ($) {
             animateResizeContainer: false,
             effects: 'fade rotateX(-45deg) translateY(-10%)'
         }
-    });
+    }).filter('.cat1');
 
 
 
