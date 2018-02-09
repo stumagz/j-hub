@@ -50,18 +50,12 @@ jQuery(document).ready(function ($) {
      ---------------------------------------------------------------------= */
 
     $('.main_home_slider').owlCarousel({
-        responsiveClass: true,
-        autoplay: false,
+        autoplay: true,
+        autoHeight:true,
         items: 1,
         loop: true,
-        dots: true,
         nav: false,
-        navText: [
-            "<i class='lnr lnr-chevron-left'></i>",
-            "<i class='lnr lnr-chevron-right'></i>"
-        ],
-        autoplayHoverPause: true
-
+        autoplayHoverPause: false
     });
 
 
@@ -105,7 +99,7 @@ jQuery(document).ready(function ($) {
             animateResizeContainer: false,
             effects: 'fade rotateX(-45deg) translateY(-10%)'
         }
-    }).filter('.cat1');
+    });
 
 
 

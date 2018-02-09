@@ -61,13 +61,32 @@
                                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                         <ul class="nav navbar-nav navbar-right">
                                             <li><a href="index">Home</a></li>
-                                            <li><a href="overview">Overview</a></li>
-                                            <li><a href="activities">Activites</a></li>
-                                            <li><a href="team">Team</a></li>
+                                              <li><a class="dropdown-toggle" type="button" data-toggle="dropdown" style="color:#fff">About<span class="caret"></span></a>
+  <ul class="dropdown-menu">
+    <li><a href="overview">Overview</a></li>
+    <li><a href="iac">Industry Advisory Council</a></li><li><a href="team">Team</a></li>
+    
+  </ul></li>
+                                            <li>
+                                                      <a class="dropdown-toggle" type="button" data-toggle="dropdown" style="color:#fff">Programs<span class="caret"></span></a>
+                                                          <ul class="dropdown-menu">
+                                                            <li><a href="programs">Jhub</a></li>
+                                                            <li><a href="colleges">Colleges</a></li>
+                                                          </ul>
+                                                  
+                                            </li>
+                                            
                                              
-<li><a href="https://www.stumagz.com/jhub" target="_blank">Magazine</a></li>
-                                            <li><a href="participatingcolleges">Participating Colleges</a></li>
-                                            <li><a href="gallery">Gallery</a></li>
+<li>
+  <a class="dropdown-toggle" type="button" data-toggle="dropdown" style="color:#fff">Activites<span class="caret"></span></a>
+  <ul class="dropdown-menu">
+    <li><a href="programs">Jhub</a></li>
+    <li><a href="colleges">Colleges</a></li>
+  </ul>
+</li>
+                                            
+                                            <li><a href="events">Events</a></li>
+<li><a href="gallery">Gallery</a></li>
                                         </ul>    
                                     </div>
 
@@ -87,43 +106,23 @@
 
         <section id="home" class="home">
             <div class="overlay">
-                <div class="container">
+                <div class="container-fluid" style="margin:0px;padding: 0px">
                     <div class="row">
                         <div class="col-sm-12 ">
                             <div class="main_home_slider text-center">
-                                <div class="single_home_slider">
                                     <div class="main_home wow fadeInUp" data-wow-duration="700ms">
-                                        <h1>Innovate. Ideate. Incubate</h1>
-                                        <p class="subtitle">JNTU Innovation Hub</p>
-
-                                        <div class="home_btn">
-                                            <a href="" class="btn btn-md">Learn More</a>
-                                        </div>
+                                        <img src="https://scontent.xx.fbcdn.net/v/t31.0-8/27173858_200422813842413_5676715679320511120_o.jpg?oh=778415209383013a05c0a693711e9e10&oe=5AE21B97" style="width: 100%">
+                                    </div>
+                                    <div class="main_home wow fadeInUp" data-wow-duration="700ms">
+                                        <img src="https://scontent.xx.fbcdn.net/v/t31.0-8/21688278_200422380509123_4396805484252550330_o.jpg?oh=1fbd069c022b358270bb26936fbf924f&oe=5B0BDAB1" style="width: 100%">
+                                    </div>
+                                    <div class="main_home wow fadeInUp" data-wow-duration="700ms">
+                                        <img src="https://scontent.xx.fbcdn.net/v/t31.0-8/27021912_200422217175806_2171578532075442820_o.jpg?oh=07fe35d6ea88a2973a55cc63fc297610&oe=5B1BF559" style="width: 100%">
+                                    </div>
 
                                     </div>
                                 </div>
-                                <div class="single_home_slider">
-                                    <div class="main_home wow fadeInUp" data-wow-duration="700ms">
-                                        <h1>Innovate. Ideate. Incubate</h1>
-                                        <p class="subtitle">JNTU Innovation Hub</p>
-
-                                        <div class="home_btn">
-                                            <a href="" class="btn btn-md">Learn More</a>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <div class="single_home_slider">
-                                    <div class="main_home wow fadeInUp" data-wow-duration="700ms">
-                                        <h1>Innovate. Ideate. Incubate</h1>
-                                        <p class="subtitle">JNTU Innovation Hub</p>
-
-                                        <div class="home_btn">
-                                            <a href="" class="btn btn-md">Learn More</a>
-                                        </div>
-
-                                    </div>
-                                </div>
+        
                             </div>
                         </div>
                     </div>
@@ -186,11 +185,24 @@
                                 
                                  <div class="single_service" style="margin-bottom: 10px">
                                     <div class="single_service_content">
-                                        <h3><a href="activities" style="cursor: pointer;color:rgba(247, 85, 31, 0.85);">See More</a></h3>
+                                        <h3><a href="activities" style="cursor: pointer;color:#0984e3;">See More</a></h3>
 
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <section id="service" class="service">
+            <div class="container">
+                <div class="row">
+                    <div class="main_service_area sections"> 
+                        <h2 class="text-center">Our Events</h2>    
+                        <div class="col-sm-12">
+                            <iframe src="https://www.stumagz.com/iframe/events/jhub" width="100%" height="300px"></iframe>
                         </div>
                     </div>
                 </div>
@@ -483,11 +495,22 @@
 
         <style type="text/css">
             .overlay{
-                background-color:rgba(247, 85, 31, 0.65);
+                background-color:rgba(9, 132, 227,0.85);
+                height: auto !important;
             }
-            .menu-scroll
+            .menu-scroll,.main_menu_bg
             {
-                background-color:rgba(247, 85, 31, 0.85);
+                background-color:#0984e3;
+            }
+
+            .home .owl-controls
+            {
+                display: none !important;
+            }
+
+            @media (max-width: 767px){
+            .home{ margin-top: 80px }
+
             }
         </style>
 
