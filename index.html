@@ -49,7 +49,7 @@
                                             <span class="icon-bar"></span>
                                             <span class="icon-bar"></span>
                                         </button>
-                                        <a class="navbar-brand" href="">
+                                        <a class="navbar-brand" href="/index">
                                             <img src="assets/images/jhub.png" style="width:80px;margin-top: -10px">
                                         </a>
                                     </div>
@@ -130,7 +130,18 @@
             </div>
         </section>
 
-
+         <section id="service" class="service">
+            <div class="container">
+                <div class="row">
+                    <div class="main_service_area sections"> 
+                        <h2 class="text-center">Our Events</h2>    
+                        <div class="col-sm-12">
+                            <iframe id="iframeDiv" src="https://www.stumagz.com/iframe/events/jhub" style="border:0px; overflow:hidden;" width="100%" height="450px"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
 
 
@@ -196,18 +207,7 @@
             </div>
         </section>
         <hr>
-        <section id="service" class="service">
-            <div class="container">
-                <div class="row">
-                    <div class="main_service_area sections"> 
-                        <h2 class="text-center">Our Events</h2>    
-                        <div class="col-sm-12">
-                            <iframe src="https://www.stumagz.com/iframe/events/jhub" width="100%" height="300px"></iframe>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+       
 
 
      <!--    <section id="choose" class="choose">
@@ -513,6 +513,13 @@
 
             }
         </style>
+
+        <script type="text/javascript">
+            var iframeDiv = document.getElementById("iframeDiv");
+            iframeDiv.addEventListener("click", function(e) {
+                window.location.href = document.getElementById("frame").src;
+            }, true);
+        </script>
 
 
         <!-- START SCROLL TO TOP  -->
